@@ -4,7 +4,8 @@
   "description": "Proyecto sencillo con Express y MongoDB",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server/server.js"
+    "start": "nodemon ./server/server.js",
+    "init-data": "node ./server/init-data.js"
   },
   "author": "Igor Iglesias",
   "dependencies": {
