@@ -15,7 +15,8 @@ const fieldset = {
     _subtypes: [{
         type: Schema.Types.ObjectId,
         ref: 'Subtype',
-        required: true
+        required: true,
+        default: []
     }]
 }
 
