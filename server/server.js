@@ -10,6 +10,7 @@ const cors = require('cors');
 const db = require('./db.js');
 
 app.use('/', express.static(__dirname));
+app.use(express.static('public'))
 
 app.use(bodyParser.json());
 
