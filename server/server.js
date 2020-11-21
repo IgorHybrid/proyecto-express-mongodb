@@ -18,6 +18,7 @@ app.use(cors());
 
 app.use('/', require('./routes/home'));
 app.use('/types', require('./routes/type'));
+app.use('/request', require('./routes/request'));
 
 const port = process.env.PORT || 8080;
 app.listen(port, async () => {
