@@ -7,7 +7,7 @@ const router = express.Router();
 
 const home = async (req, res, next) => {
     try {
-        res.sendFile('index.html', {root: './client'});
+        res.sendFile('index.html', {root: './views'});
     } catch (error) {
         next(error)
     }

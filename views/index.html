@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Prueba</title>
+  </head>
+  <body>
+    <!-- Default form contact -->
+    <form class="text-center border border-light p-5" action="/request/insert" method="POST">
+
+      <p class="h4 mb-4">Envie su petición</p>
+
+      <div class="form-group row">
+        <label class="col-form-label">Nombre <span style="color:red">*</span></label>
+        <input type="text" id="name" name="name" class="form-control mb-4" placeholder="Name" required>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Apellidos</label>
+        <input type="text" id="surnames" name="surnames" class="form-control mb-4" placeholder="Apellidos">
+      </div>
+      
+      <div class="form-group row">
+        <label class="col-form-label">Email <span style="color:red">*</span></label>
+        <input type="text" id="email" name="email" class="form-control mb-4" placeholder="ejemplo@ejemplo.com" required>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Teléfono</label>
+        <input type="text" id="phone" name="phone" class="form-control mb-4" placeholder="Ejem: 666333222">
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Fecha de nacimiento</label>
+        <input type="date" id="dateBirth" name="dateBirth" class="form-control mb-4">
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Género</label>
+        <select id="genre" name="genre" class="form-control mb-4">
+          <option value="">Eliga una opción</option>
+          <option value="hombre">Hombre</option>
+          <option value="mujer">Mujer</option>
+          <option value="otro">Otro</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Tipo de consulta <span style="color:red">*</span></label>
+        <select id="type" name="type" onchange="getRequestSubTypes(this.value)" class="form-control mb-4" required>
+          <option value="">Eliga una opción</option>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Subtipo de consulta <span style="color:red">*</span></label>
+        <select id="subtype" name="subtype" class="form-control mb-4" required>
+        </select>
+      </div>
+
+      <div class="form-group row">
+        <label class="col-form-label">Mensaje <span style="color:red">*</span></label>
+        <textarea class="form-control rounded-0" id="message" name="message" rows="3" placeholder="Message"></textarea>
+      </div>
+
+      <div class="custom-control custom-checkbox mb-4">
+          <input type="checkbox" class="custom-control-input" id="defaultContactFormCopy" required>
+          <label class="custom-control-label" for="defaultContactFormCopy">Acepto las condiciones <span style="color:red">*</span></label>
+      </div>
+
+      <button class="btn btn-info btn-block" type="submit">Enviar</button>
+
+    </form>
+    <!-- Default form contact -->
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
