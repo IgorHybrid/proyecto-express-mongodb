@@ -14,8 +14,8 @@ const create = async(params) => {
     request.name = params.name;
     request.email = params.email;
     request.message = params.message;
-    request._type = params._type;
-    request._subtype = params._subtype;
+    request._type = params.type;
+    request._subtype = params.subtype;
 
     if (params.surnames) {
         request.surnames = params.surnames;

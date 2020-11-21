@@ -12,6 +12,7 @@ const db = require('./db.js');
 app.use('/', express.static(__dirname));
 app.use(express.static('public'))
 
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 //Enable all CORS requests
