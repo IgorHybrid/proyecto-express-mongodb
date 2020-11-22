@@ -15,7 +15,6 @@ const errorHandler = (err, req, res, next) => {
     }
 
     if (err.name === 'FormValidationError') {
-        console.log(err.message)
         if (req.header('Content-Type').includes('application/json')) {
             return res.status(422).json({ message: err.message });
         } else {
