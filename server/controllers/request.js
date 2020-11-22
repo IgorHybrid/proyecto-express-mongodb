@@ -9,6 +9,14 @@ const getAll = async () => {
 }
 
 const create = async(params) => {
+    const sameRequest = await Request.find({email: params.email, createdDate:{$gt:new Date(Date.now() - 24*60*60 * 1000)}});
+    if (sameRequest.length > 0) {
+        let e = new Error();
+        e.name = 'FormValidationError';
+        e.message = [{msg: "No se pueden hacer más de una petición por día"}];
+        throw e;
+    }
+
     let request = new Request();
 
     request.name = params.name;
