@@ -31,6 +31,15 @@ const getRequestSubTypes = (id) => {
     });
 }
 
+const checkForm = (ele) => {
+    $(ele)
+        .find('input[name]')
+        .filter(function () {
+            return !this.value;
+        })
+        .prop('name', '');
+}
+
 window.onload = () => {
     getRequestTypes();
 }
