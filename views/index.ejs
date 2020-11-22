@@ -12,9 +12,25 @@
   </head>
   <body>
     <!-- Default form contact -->
-    <form class="text-center border border-light p-5" action="/request/insert" method="POST">
+    <form class="text-center border border-light p-5" action="/request/insert" method="POST" onsubmit="checkForm(this)">
 
       <p class="h4 mb-4">Envie su petición</p>
+
+      <% if (typeof error != "undefined") { %>
+        <div class="alert alert-danger">
+          <ul class="text-left">
+            <% error.message.forEach(function(err){%>
+              <li><%= err.msg %> </li>
+            <% }); %>
+          </ul>
+        </div>
+      <% } %>
+
+      <% if (typeof success != "undefined") { %>
+        <div class="alert alert-success">
+          <p>Se ha guardado su petición. ¡Muchas gracias!</p>
+        </div>
+      <% } %>
 
       <div class="form-group row">
         <label class="col-form-label">Nombre <span style="color:red">*</span></label>
@@ -38,7 +54,7 @@
 
       <div class="form-group row">
         <label class="col-form-label">Fecha de nacimiento</label>
-        <input type="date" id="dateBirth" name="dateBirth" class="form-control mb-4">
+        <input type="date" id="birthDate" name="birthDate" class="form-control mb-4">
       </div>
 
       <div class="form-group row">
