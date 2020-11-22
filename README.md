@@ -10,7 +10,7 @@ npm install
 ```
 3. Instala los datos necesarios para hacer funcionar la aplicación. Ten en cuenta que este comando borrará siempre la base de datos de este proyecto e insertará datos estandar.
 ```sh
-npm run init-db
+npm run init-data
 ```
 4. Ejecuta la aplicación
 ```sh
