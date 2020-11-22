@@ -23,9 +23,18 @@ const insert = async (req, res, next) => {
     try {
         const errors = validationResult(req)
         if (!errors.isEmpty()) {
-            return res.status(422).json({ errors: errors.array() })
+            let e = new Error();
+            e.name = 'FormValidationError';
+            e.message = errors.array();
+            throw e;
         }
-        res.json(await requestController.create(req.body));
+
+        const createdRequest = await requestController.create(req.body);
+        if (req.header('Content-Type').includes('application/json')) {
+            res.json(createdRequest);
+        } else {
+            res.render('index.ejs', {success: true});
+        }
     } catch (error) {
         next(error);
     }
